@@ -1,0 +1,70 @@
+To : TIC x NJACK x UNTRADE TEAM
+We have submitted the drive link which contains 2 subfolders , one for BTC and other one for ETH in which we have uploaded multiple strategies.
+For each strategy, we have uploaded 3 files
+Input files are taken from the links provided by tic iit patna in their WhatsApp group 
+a)ipynb file-->
+	Main strategy 
+	Naming convention: strategyno.instrument.speciality
+	Backtest code
+	Shown some working as well but its not clear(preferred to run it on own device(google colab preferred to avoid incompatibility  	issues.)
+b)output csv
+	csv containing data of long and short positions as per strategy.
+c)Explanatory file(optional) 
+	contains the actual implementation idea of the strategy and explaination
+
+We hope you will like this .
+Below is the data for technical issues handling and understanding and also references.
+Special thanks to Zelta Automations for providing this opportunity.
+THANKING YOU
+REGARDS
+TEAM CRYPTO MAVERICKS
+Members:
+1.Parth Sharma
+2.Chirag Ashish Agrawal
+3.Aditya Prakash
+
+
+
+Technical Working
+1.Libraries and Frameworks
+a)Pandas
+b)NumPy
+c)pandas_ta (!pip install pandas_ta)
+d)ta(!pip install ta)
+e)matplotlib(optional)
+
+Simply upload the ipynb to colab and run all cells.
+
+2.Handling data frame error 
+In case the file is unable to read and showing error 'parse datetime'
+use any of the given below 2 codes after loading data in pandas dataframe
+code1(preferred)
+df['datetime'] = pd.to_datetime(df['datetime'], errors='coerce')
+df = df.dropna(subset=['datetime'])
+df.set_index('datetime', inplace=True)
+
+code2(may or may not work dataset and system specific)(should try if code1 is not working)
+# Parse the 'datetime' column correctly
+df['datetime'] = pd.to_datetime(df['datetime'], format='%Y-%m-%d %H:%M:%S')  # Adjusted format
+df.set_index('datetime', inplace=True)
+
+
+3.Dataset to use (most preferred for specific strategy)
+-->this is mentioned while loading the csv to pandas data frame in the usual google colab format ('/content/file_name.csv')
+-->file name corresponds to the data used
+
+4.Graph Plot (optional)
+use given code and type it after the strategy cell in ipynb file
+# Plot equity curve
+plt.figure(figsize=(14, 7))
+plt.plot(df.index, balance_history, label='Equity Curve', color='blue')
+plt.title('Equity Curve')
+plt.xlabel('Date')
+plt.ylabel('Balance (USD)')
+plt.grid()
+plt.legend()
+plt.show()
+
+5.Backtesting 
+Provided by zelta automations (using untrade-sdk) code given in the file
+
