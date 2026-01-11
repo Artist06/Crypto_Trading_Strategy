@@ -106,11 +106,6 @@ Implementation examples are included within the notebooks.
 - **Fundamental & Hybrid Approaches:**  
   Combined trend-following and momentum strategies with fundamental market signals.
 
-- **Performance Highlights:**  
-  - Sharpe ratios exceeding **20+** in some strategies.  
-  - Returns of **2500%+** achieved on selected strategies with minimal drawdowns.  
-  - Collaboration with researchers helped cut down development time by over **40%**.
-
 ---
 
 ## 👥 Team Crypto Mavericks
